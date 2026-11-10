@@ -1,0 +1,24 @@
+﻿<Window x:Class="mvvm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Лотерея" Height="300" Width="500">
+    <Window.Resources>
+        <Style x:Key="all_style">
+            <Setter Property="ItemsControl.FontFamily" Value="Verdana"/>
+            <Setter Property="ItemsControl.FontSize" Value="14"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <Label Style="{StaticResource all_style}">Кількість комбінацій:</Label>
+            <TextBox Text="{Binding Combinations, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource all_style}"/>
+            <Label Style="{StaticResource all_style}">Імовірність виграшу:</Label>
+            <TextBox Text="{Binding Probability, Mode=OneWay}" IsReadOnly="True"
+                     Style="{StaticResource all_style}"/>
+            <Label Style="{StaticResource all_style}">У відсотках:</Label>
+            <TextBox Text="{Binding Percent, Mode=OneWay}" IsReadOnly="True"
+                     Style="{StaticResource all_style}"/>
+        </StackPanel>
+    </Grid>
+</Window>
